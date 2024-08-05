@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Hello TaskController!
+{% endblock %}
+
+{% block body %}
+  <h1 class="text-5xl font-bold text-center mb-10">Liste des tâches</h1>
+
+  <div class="flex flex-wrap gap-4 justify-center">
+    {% for task in tasks %}
+      <div class="shadow-xl p-4">
+        <h2 class="text-3xl">{{ task.name }}</h2>
+        <h4>{{ task.createdAt|date('d/m/Y') }}</h4>
+      </div>
+    {% else %}
+      <p>Aucune tâche enregistrée</p>
+    {% endfor %}
+  </div>
+{% endblock %}
